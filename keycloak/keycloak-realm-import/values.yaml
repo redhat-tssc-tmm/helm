@@ -23,6 +23,53 @@ hook:
         - ALL
   maxTimeToWait: 120000
 
+users:
+  users:
+    - id: dev1      
+      groups:
+        - developers
+        - devteam1
+    - id: dev2
+      groups:
+        - developers
+        - devteam1
+    - id: pe1
+      groups:
+        - platformengineers
+        - rhdh
+    - id: pe2
+      groups:
+        - platformengineers
+        - rhdh
+    - id: pipeline
+      groups:
+        - infrastructure
+  password:
+
+groups:
+  - name: developers
+  - name: devteam1
+  - name: platformengineers
+  - name: rhdh
+  - name: infrastructure
+
+client:
+  backstage:
+    name:
+    redirectUri:
+    webOrigin:
+    secret:
+  backstagePlugin:
+    name:
+    redirectUri:
+    webOrigin:
+    secret:
+  trustedartifactsigner:
+    name: trusted-artifact-signer
+    redirectUri:
+      - urn:ietf:wg:oauth:2.0:oob
+      - "*"
+
 argocd:
   enabled: true
   syncwave: "-1"
